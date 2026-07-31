@@ -231,6 +231,15 @@ body{padding-bottom:74px}
 .rv.in{opacity:1;transform:none}
 .rv-d1{transition-delay:.08s}.rv-d2{transition-delay:.16s}.rv-d3{transition-delay:.24s}
 
+/* 모바일 미세조정 */
+@media(max-width:767px){
+  .feat li{flex-direction:column;align-items:center;text-align:center;gap:11px}
+}
+@media(max-width:759px){
+  .tone.wide{grid-column:1 / -1}
+  .tone.wide img{aspect-ratio:4/3;object-position:50% 30%}
+}
+
 @media(min-width:768px){
   .menu{display:flex}
   .burger{display:none}
@@ -340,7 +349,7 @@ body{padding-bottom:74px}
         <div class="tone rv rv-d1"><img src="os-36.jpg" loading="lazy" alt="모노톤 색감 예시"><span class="lab">모노톤</span></div>
         <div class="tone rv rv-d2"><img src="t-vivid.jpg" loading="lazy" alt="비비드 색감 예시"><span class="lab">비비드</span></div>
         <div class="tone rv rv-d3"><img src="os-hero.jpg" loading="lazy" alt="파스텔 색감 예시"><span class="lab">파스텔</span></div>
-        <div class="tone rv rv-d3"><img src="t-beige.jpg" loading="lazy" alt="베이지 색감 예시"><span class="lab">베이지</span></div>
+        <div class="tone wide rv rv-d3"><img src="t-beige.jpg" loading="lazy" alt="베이지 색감 예시"><span class="lab">베이지</span></div>
       </div>
     </div>
   </section>
@@ -469,6 +478,7 @@ body{padding-bottom:74px}
         <p>오늘, 우리 사진관에 오신 것을 환영합니다. 예약 확정 시 안내되는 스튜디오 입장 방법과 사용법을 미리 숙지하고 오시는 걸 권장 드려요.</p>
         <p>방문 전 인스타그램(@ourstudio_today)을 참고하시면 실제 촬영 예시가 될 만한 사진들을 충분히 보실 수 있어요. 블로그에서는 촬영 꿀팁부터 이용 방법·포즈·시간 활용법까지 더 풍부한 정보를 확인하실 수 있어요.</p>
         <p>편안히 웃고, 자연스럽게 움직이고, 서로를 바라보는 순간들이 오늘의 사진 안에 오래도록 고요하고 따뜻하게 남기를 바랍니다.</p>
+        <div style="margin-top:18px"><a class="btn-ghost" href="https://www.instagram.com/ourstudio_today/" target="_blank" rel="noopener">인스타그램에서 촬영 예시 보기 <span aria-hidden="true">&rarr;</span></a></div>
       </div>
     </div>
   </section>
