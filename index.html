@@ -164,6 +164,15 @@ section{position:relative}
 .step p{color:var(--ink2);font-size:14px;line-height:1.75}
 .guide-tip{margin-top:18px;display:flex;flex-wrap:wrap;gap:9px 18px;align-items:center;color:var(--ink2);font-size:13.5px}
 .guide-tip .dot{color:var(--green)}
+.cguide{margin-top:20px;border:1px solid var(--line);border-radius:12px;background:#fbfcf8;overflow:hidden}
+.cguide summary{cursor:pointer;list-style:none;padding:18px 20px;font-family:var(--serif);font-weight:700;font-size:1.05rem;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--ink)}
+.cguide summary::-webkit-details-marker{display:none}
+.cguide summary .pl{color:var(--green);font-size:1.4rem;line-height:1;transition:transform .3s;flex:0 0 auto}
+.cguide[open] summary .pl{transform:rotate(45deg)}
+.cguide .cg-body{padding:0 20px 20px}
+.cguide .cg-row{padding:13px 0;border-top:1px solid var(--line2);display:flex;gap:14px}
+.cguide .cg-row .k{flex:0 0 76px;font-family:var(--serif);font-weight:700;color:var(--green-d);font-size:14px}
+.cguide .cg-row .v{color:var(--ink2);font-size:14px;line-height:1.75;min-width:0}
 
 /* info cards + notice */
 .info-grid{display:grid;grid-template-columns:1fr;gap:13px}
@@ -188,8 +197,12 @@ section{position:relative}
 .br-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 @media(min-width:600px){.br-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:900px){.br-grid{grid-template-columns:repeat(5,1fr)}}
-.br{display:flex;align-items:center;gap:9px;padding:15px 16px;background:var(--paper);border:1px solid var(--line);border-radius:11px;font-size:15px;font-weight:500}
-.br .pin{width:8px;height:8px;border-radius:50%;background:var(--green);flex:0 0 auto}
+.br{display:flex;align-items:flex-start;gap:10px;padding:15px 16px;background:var(--paper);border:1px solid var(--line);border-radius:11px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.br:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 12px 26px -18px rgba(38,39,31,.4)}
+.br .pin{width:8px;height:8px;border-radius:50%;background:var(--green);flex:0 0 auto;margin-top:6px}
+.br .bt{display:flex;flex-direction:column;line-height:1.32}
+.br .bt small{font-size:11.5px;color:var(--mut);letter-spacing:.01em}
+.br .bt b{font-size:15px;font-weight:600;color:var(--ink)}
 .br-note{margin-top:22px;color:var(--ink2);font-size:14px;line-height:1.8}
 .br-cta{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px}
 
@@ -242,7 +255,7 @@ body{padding-bottom:74px}
       <a href="#faq">FAQ</a>
       <a href="#branches">지점</a>
     </nav>
-    <a class="book" href="https://m.place.naver.com/place/1639948343/home" target="_blank" rel="noopener">네이버 예약</a>
+    <a class="book" href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약</a>
     <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer">
       <span></span><span></span><span></span>
     </button>
@@ -257,7 +270,7 @@ body{padding-bottom:74px}
     <a href="#guide">이용안내</a>
     <a href="#faq">FAQ</a>
     <a href="#branches">지점</a>
-    <a href="https://m.place.naver.com/place/1639948343/home" target="_blank" rel="noopener">네이버 예약 &rarr;</a>
+    <a href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약 &rarr;</a>
   </nav>
 </div>
 
@@ -271,7 +284,7 @@ body{padding-bottom:74px}
         <h1>지금의 우리가<br>언젠가 꺼내보고 싶은<br><span class="accent">오늘</span>이 되길</h1>
         <p class="lead">자연스러움을 담아내는 따뜻한 감성의 셀프 스튜디오,<br>‘오늘, 우리 사진관’입니다. 조용하고 편안한 공간에서<br>눈치 보지 않고 있는 그대로의 순간을 남겨보세요.</p>
         <div class="hero-cta">
-          <a class="btn-primary" href="https://m.place.naver.com/place/1639948343/home" target="_blank" rel="noopener">네이버 예약하기 <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn-primary" href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약하기 <span aria-hidden="true">&rarr;</span></a>
           <a class="btn-ghost" href="https://www.instagram.com/ourstudio_today/" target="_blank" rel="noopener">인스타그램 포트폴리오</a>
         </div>
       </div>
@@ -306,10 +319,10 @@ body{padding-bottom:74px}
         </div>
       </div>
       <ul class="feat rv rv-d2">
-        <li><span class="ic">色</span><div><b>다섯 가지 감성 색감</b><span>매 컷마다 다른 색감을 자유롭게 선택. 오우사만의 색으로 오늘을 물들여요.</span></div></li>
-        <li><span class="ic">全</span><div><b>전체 원본 파일 무료 제공</b><span>고른 사진의 원본을 이메일·USB 등 편한 방식으로 모두 가져가실 수 있어요.</span></div></li>
-        <li><span class="ic">友</span><div><b>반려동물 동반 환영</b><span>귀여운 반려동물은 추가 요금 없이 함께 촬영하실 수 있어요.</span></div></li>
-        <li><span class="ic">今</span><div><b>최대 7인 세로 화각</b><span>혼자도, 여럿도 좋아요. 인스타그램에서 실제 촬영 예시를 참고해 보세요.</span></div></li>
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V8"/><path d="M12 13c-3.2 0-5.5-2.3-5.5-5.5C9.7 7.5 12 9.8 12 13Z"/><path d="M12 10c3.2 0 5.5-2.3 5.5-5.5C14.3 4.5 12 6.8 12 10Z"/></svg></span><div><b>다섯 가지 감성 색감</b><span>매 컷마다 다른 색감을 자유롭게 선택. 오우사만의 색으로 오늘을 물들여요.</span></div></li>
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></span><div><b>전체 원본 파일 무료 제공</b><span>고른 사진의 원본을 이메일·USB 등 편한 방식으로 모두 가져가실 수 있어요.</span></div></li>
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none"/></svg></span><div><b>반려동물 동반 환영</b><span>귀여운 반려동물은 추가 요금 없이 함께 촬영하실 수 있어요.</span></div></li>
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.5 20.5 12 12 20.5 3.5 12z"/><circle cx="12" cy="12" r="1.7" fill="currentColor" stroke="none"/></svg></span><div><b>최대 7인 세로 화각</b><span>혼자도, 여럿도 좋아요. 인스타그램에서 실제 촬영 예시를 참고해 보세요.</span></div></li>
       </ul>
     </div>
   </section>
@@ -323,11 +336,11 @@ body{padding-bottom:74px}
         <p>각혈하는 심정으로 직접 빚어낸 오우사만의 색감. 매 컷마다 다른 색을 자유롭게 골라, 나에게 가장 어울리는 오늘을 찾아보세요.</p>
       </div>
       <div class="tones">
-        <div class="tone rv"><img src="os-35.jpg" loading="lazy" alt="클래식 색감 예시"><span class="lab">클래식</span></div>
+        <div class="tone rv"><img src="t-classic.jpg" loading="lazy" alt="클래식 색감 예시"><span class="lab">클래식</span></div>
         <div class="tone rv rv-d1"><img src="os-36.jpg" loading="lazy" alt="모노톤 색감 예시"><span class="lab">모노톤</span></div>
-        <div class="tone rv rv-d2"><img src="os-08.jpg" loading="lazy" alt="비비드 색감 예시"><span class="lab">비비드</span></div>
+        <div class="tone rv rv-d2"><img src="t-vivid.jpg" loading="lazy" alt="비비드 색감 예시"><span class="lab">비비드</span></div>
         <div class="tone rv rv-d3"><img src="os-hero.jpg" loading="lazy" alt="파스텔 색감 예시"><span class="lab">파스텔</span></div>
-        <div class="tone rv rv-d3"><img src="os-16.jpg" loading="lazy" alt="베이지 색감 예시"><span class="lab">베이지</span></div>
+        <div class="tone rv rv-d3"><img src="t-beige.jpg" loading="lazy" alt="베이지 색감 예시"><span class="lab">베이지</span></div>
       </div>
     </div>
   </section>
@@ -422,7 +435,19 @@ body{padding-bottom:74px}
         <span><span class="dot">●</span> 무선 리모컨 무료</span>
         <span><span class="dot">●</span> 블로그 리뷰 신청 시 평일 30분 추가</span>
       </div>
-      <div style="margin-top:22px"><a class="btn-ghost rv" href="https://blog.naver.com/ourstudio_today" target="_blank" rel="noopener">블로그에서 촬영 꿀팁 더 보기 <span aria-hidden="true">&rarr;</span></a></div>
+      <details class="cguide rv">
+        <summary>촬영 가이드 자세히 보기 <span class="pl" aria-hidden="true">+</span></summary>
+        <div class="cg-body">
+          <div class="cg-row"><span class="k">입장</span><span class="v">정시(정각) 입장을 기본으로 해요. 예약 확정 시 안내되는 스튜디오 입장 방법을 미리 숙지하고 오시면 편해요.</span></div>
+          <div class="cg-row"><span class="k">시간 배분</span><span class="v">~00:35 촬영 → ~00:50 사진 선택·인화·퇴실 순으로 이용하시면 돼요. 시간마다 알람을 맞춰 드립니다.</span></div>
+          <div class="cg-row"><span class="k">리모컨</span><span class="v">무선 리모컨으로 직접 촬영해요. 손에 살짝 쥐고, 원하는 순간에 자유롭게 셔터를 눌러 보세요.</span></div>
+          <div class="cg-row"><span class="k">색감</span><span class="v">다섯 가지 색감을 매 컷 자유롭게 선택할 수 있어요. 원하는 색을 미리 정해 두면 시간을 아낄 수 있어요.</span></div>
+          <div class="cg-row"><span class="k">의상·소품</span><span class="v">탈의실이 있어 여벌 의상을 준비해 오셔도 좋아요. 소품 활용 예시는 인스타그램을 참고해 보세요.</span></div>
+          <div class="cg-row"><span class="k">포즈·동선</span><span class="v">서로 바라보고, 웃고, 자연스럽게 움직이는 컷이 예뻐요. 인스타그램 포트폴리오의 포즈를 참고하면 도움이 돼요.</span></div>
+          <div class="cg-row"><span class="k">인원</span><span class="v">최대 7인 세로 화각이에요. 다수 인원은 인스타그램의 예시 사진을 참고해 예약해 주세요.</span></div>
+        </div>
+      </details>
+      <div style="margin-top:18px"><a class="btn-ghost rv" href="https://blog.naver.com/ourstudio_today" target="_blank" rel="noopener">블로그에서 촬영 꿀팁 더 보기 <span aria-hidden="true">&rarr;</span></a></div>
     </div>
   </section>
 
@@ -475,20 +500,20 @@ body{padding-bottom:74px}
         <p>가까운 지점에서 오늘, 우리의 순간을 남겨보세요. 지점별 상세 위치와 예약은 인스타그램·네이버에서 확인하실 수 있어요.</p>
       </div>
       <div class="br-grid rv">
-        <div class="br"><span class="pin"></span>대학로</div>
-        <div class="br"><span class="pin"></span>신촌</div>
-        <div class="br"><span class="pin"></span>용리단길</div>
-        <div class="br"><span class="pin"></span>성신여대</div>
-        <div class="br"><span class="pin"></span>노원</div>
-        <div class="br"><span class="pin"></span>회기</div>
-        <div class="br"><span class="pin"></span>분당서현</div>
-        <div class="br"><span class="pin"></span>분당야탑</div>
-        <div class="br"><span class="pin"></span>수원영통</div>
-        <div class="br"><span class="pin"></span>광명철산</div>
+        <a class="br" href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>대학로 옆</small><b>마로니에점</b></span></a>
+        <a class="br" href="https://naver.me/5l7kSBwP" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>캠퍼스 옆</small><b>신촌연세점</b></span></a>
+        <a class="br" href="https://naver.me/Fw7ifPXG" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>박물관 옆</small><b>용리단길점</b></span></a>
+        <a class="br" href="https://naver.me/FXwGoYIO" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>캠퍼스 옆</small><b>성신여대점</b></span></a>
+        <a class="br" href="https://naver.me/GI3hxcAA" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>대단지 속</small><b>노원도봉점</b></span></a>
+        <a class="br" href="https://naver.me/xDCT6RRU" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>캠퍼스 옆</small><b>회기경희점</b></span></a>
+        <a class="br" href="https://naver.me/Fr7pVuFt" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>신도시 속</small><b>분당서현점</b></span></a>
+        <a class="br" href="https://naver.me/GBvXrOKp" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>신도시 속</small><b>분당야탑점</b></span></a>
+        <a class="br" href="https://naver.me/Fk7VeRgH" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>호숫가 옆</small><b>수원영통점</b></span></a>
+        <a class="br" href="https://naver.me/GPdHnRjt" target="_blank" rel="noopener"><span class="pin"></span><span class="bt"><small>로데오 옆</small><b>광명철산점</b></span></a>
       </div>
       <p class="br-note rv">각 지점은 프라이빗 무인 스튜디오로 운영돼요. 예약 시 네이버 알림으로 상세 주소와 이용 안내를 보내 드립니다. 주차·화장실 등 편의는 지점마다 다르니 예약 전 확인 부탁드려요.</p>
       <div class="br-cta rv">
-        <a class="btn-primary" href="https://m.place.naver.com/place/1639948343/home" target="_blank" rel="noopener">네이버 예약하기 <span aria-hidden="true">&rarr;</span></a>
+        <a class="btn-primary" href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약하기 <span aria-hidden="true">&rarr;</span></a>
         <a class="btn-ghost" href="https://www.instagram.com/ourstudio_today/" target="_blank" rel="noopener">인스타그램에서 지점 보기</a>
       </div>
     </div>
@@ -500,7 +525,7 @@ body{padding-bottom:74px}
     <div class="f-brand">오늘, 우리 사진관</div>
     <p class="f-tag">편안히 웃고, 자연스럽게 움직이고, 서로를 바라보는 순간들이<br>오늘의 사진 안에 오래도록 따뜻하게 남기를.</p>
     <div class="f-links">
-      <a href="https://m.place.naver.com/place/1639948343/home" target="_blank" rel="noopener">네이버 예약</a>
+      <a href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약</a>
       <a href="https://www.instagram.com/ourstudio_today/" target="_blank" rel="noopener">인스타그램 @ourstudio_today</a>
       <a href="https://blog.naver.com/ourstudio_today" target="_blank" rel="noopener">블로그</a>
       <a href="#top">맨 위로</a>
@@ -511,7 +536,7 @@ body{padding-bottom:74px}
 
 <div class="quickbar">
   <a class="qb-sub" href="https://www.instagram.com/ourstudio_today/" target="_blank" rel="noopener">인스타그램</a>
-  <a class="qb-main" href="https://m.place.naver.com/place/1639948343/home" target="_blank" rel="noopener">네이버 예약</a>
+  <a class="qb-main" href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약</a>
 </div>
 
 <script>
