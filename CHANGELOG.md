@@ -1,5 +1,11 @@
 # CHANGELOG — 오늘, 우리 사진관 (ourstudio-today-sample)
 
+## 2026-07-31 — v0.6 코드 검토 반영(견고성·성능·SEO)
+- **[버그] JS-off 백지 방지**: `.rv{opacity:0}`가 `.js` 게이팅·noscript 없이 걸려 JS 꺼지면 본문 전체 안 보이던 회귀 → `<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>` 추가. (JS 경로는 IO+1.6s+else로 견고, JS-off만 뚫려 있었음. eunasoo·daynone 폴백의 회귀)
+- **[성능] 마퀴 우선순위**: 마퀴 12장 eager가 히어로 LCP와 경쟁 → **fetchpriority="low" + decoding="async"**로 뒤로 미룸. ⚠️lazy는 transform 마퀴에서 화면밖 이미지가 안 뜰 위험이라 미채택(우선순위 낮춤으로 대체).
+- **[SEO] JSON-LD 추가**: Organization(오우사, sameAs 인스타·블로그) + 주소 확인된 용리단길점만 PhotographyBusiness/LocalBusiness. 나머지 9곳은 주소 미확인이라 미포함(지어내지 않음).
+
+
 ## 2026-07-31 — v0.5 모바일 미세조정
 - 소개 피처 카드(색감·원본·반려동물·인원): 모바일에서 아이콘 위·텍스트 아래 **중앙 정렬**(우측 쏠림 해결).
 - 색감 5타일 홀수 문제: 모바일 2열에서 **5번째(베이지) 타일을 가로 전체 span(4:3)**으로 딱 맞춤.
