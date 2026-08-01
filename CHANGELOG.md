@@ -1,5 +1,11 @@
 # CHANGELOG — 오늘, 우리 사진관 (ourstudio-today-sample)
 
+## 2026-07-31 — v0.7 Pretendard self-host (CF 이메일난독화 회피)
+- 원인: CF Email Obfuscation이 jsdelivr `[email protected]` URL의 `[email protected]`을 이메일로 오인→`[email protected]` 치환→CSS 400→Pretendard 미로드(시스템 폴백). ([[cloudflare-email-obfuscation-cdn-url]])
+- 해결: CDN `<link>` 제거 → **PretendardVariable.ttf를 페이지 사용 글리프(467자)로 서브셋한 105KB woff2 self-host** + `@font-face`(font-weight:100 900 variable, display swap). @version URL이 사라져 CF가 못 건드림.
+- Gowun Batang은 정상 로드 중이라 CDN 유지(납품 시 self-host 대상). pretendard-sub.woff2 커밋.
+
+
 ## 2026-07-31 — v0.6 코드 검토 반영(견고성·성능·SEO)
 - **[버그] JS-off 백지 방지**: `.rv{opacity:0}`가 `.js` 게이팅·noscript 없이 걸려 JS 꺼지면 본문 전체 안 보이던 회귀 → `<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>` 추가. (JS 경로는 IO+1.6s+else로 견고, JS-off만 뚫려 있었음. eunasoo·daynone 폴백의 회귀)
 - **[성능] 마퀴 우선순위**: 마퀴 12장 eager가 히어로 LCP와 경쟁 → **fetchpriority="low" + decoding="async"**로 뒤로 미룸. ⚠️lazy는 transform 마퀴에서 화면밖 이미지가 안 뜰 위험이라 미채택(우선순위 낮춤으로 대체).
