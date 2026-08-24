@@ -97,9 +97,10 @@ header.solid{background:rgba(255,255,255,.92);border-bottom-color:var(--line);bo
 .btn-ghost:hover{border-color:var(--green);color:var(--green-d)}
 .hero-photo{position:relative}
 .hero-photo img{width:100%;border-radius:10px;aspect-ratio:1/1;object-fit:cover;box-shadow:0 22px 55px -30px rgba(38,39,31,.42)}
-.hero-photo .frame-tag{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);border:1px solid var(--line);
-  border-radius:999px;padding:8px 16px;font-family:var(--serif);font-size:12.5px;letter-spacing:.06em;color:var(--green-d);
-  box-shadow:0 10px 26px -14px rgba(38,39,31,.3)}
+.hero-photo .frame-tag{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(255,255,255,.93);border:1px solid var(--line);
+  border-radius:14px;padding:9px 14px;box-shadow:0 10px 26px -14px rgba(38,39,31,.3)}
+.hero-photo .frame-tag b{display:block;font-family:var(--serif);font-size:12.5px;letter-spacing:.05em;color:var(--green-d);font-weight:700}
+.hero-photo .frame-tag .fbr{display:block;margin-top:3px;font-size:11.5px;line-height:1.5;color:var(--ink);opacity:.85;word-break:keep-all}
 
 /* section */
 section{position:relative}
@@ -230,6 +231,11 @@ footer .f-meta{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,25
 .quickbar .qb-main{background:var(--green);color:#fff}
 .quickbar .qb-sub{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
 @media(min-width:768px){.quickbar{display:none}}
+.chatbot{position:fixed;right:14px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:71;display:inline-flex;align-items:center;gap:7px;background:var(--green);color:#fff;border-radius:999px;padding:11px 16px;font-family:var(--serif);font-size:14px;font-weight:600;box-shadow:0 12px 30px -12px rgba(38,39,31,.55);transition:transform .15s,background .2s}
+.chatbot:hover{background:var(--green-d)}
+.chatbot:active{transform:scale(.96)}
+.chatbot svg{width:18px;height:18px;flex:0 0 auto}
+@media(min-width:768px){.chatbot{right:24px;bottom:24px}}
 body{padding-bottom:74px}
 @media(min-width:768px){body{padding-bottom:0}}
 
@@ -271,7 +277,7 @@ body{padding-bottom:74px}
       <a href="#faq">FAQ</a>
       <a href="#branches">지점</a>
     </nav>
-    <a class="book" href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약</a>
+    <a class="book" href="https://linktr.ee/ourstudio_today" target="_blank" rel="noopener">예약하기</a>
     <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="drawer">
       <span></span><span></span><span></span>
     </button>
@@ -286,7 +292,7 @@ body{padding-bottom:74px}
     <a href="#guide">이용안내</a>
     <a href="#faq">FAQ</a>
     <a href="#branches">지점</a>
-    <a href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약 &rarr;</a>
+    <a href="https://linktr.ee/ourstudio_today" target="_blank" rel="noopener">예약하기 &rarr;</a>
   </nav>
 </div>
 
@@ -300,13 +306,13 @@ body{padding-bottom:74px}
         <h1>지금의 우리가<br>언젠가 꺼내보고 싶은<br><span class="accent">오늘</span>이 되길</h1>
         <p class="lead">자연스러움을 담아내는 따뜻한 감성의 셀프 스튜디오,<br>‘오늘, 우리 사진관’입니다. 조용하고 편안한 공간에서<br>눈치 보지 않고 있는 그대로의 순간을 남겨보세요.</p>
         <div class="hero-cta">
-          <a class="btn-primary" href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약하기 <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn-primary" href="https://linktr.ee/ourstudio_today" target="_blank" rel="noopener">예약하기 <span aria-hidden="true">&rarr;</span></a>
           <a class="btn-ghost" href="https://www.instagram.com/ourstudio_today/" target="_blank" rel="noopener">인스타그램 포트폴리오</a>
         </div>
       </div>
       <div class="hero-photo rv rv-d2">
-        <img src="os-hero.jpg" alt="오늘, 우리 사진관에서 촬영한 파스텔 톤의 인물 컷" fetchpriority="high" width="1100" height="1100">
-        <span class="frame-tag">전국 10개 지점</span>
+        <img src="os-hero.jpg" alt="오늘, 우리 사진관에서 촬영한 대표 인물 컷" fetchpriority="high" width="1100" height="1100">
+        <div class="frame-tag"><b>전국 10개 지점</b><span class="fbr">마로니에 · 신촌연세 · 용리단길 · 성신여대 · 노원도봉 · 회기경희 · 분당서현 · 분당야탑 · 수원영통 · 광명철산</span></div>
       </div>
     </div>
   </section>
@@ -335,10 +341,10 @@ body{padding-bottom:74px}
         </div>
       </div>
       <ul class="feat rv rv-d2">
-        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V8"/><path d="M12 13c-3.2 0-5.5-2.3-5.5-5.5C9.7 7.5 12 9.8 12 13Z"/><path d="M12 10c3.2 0 5.5-2.3 5.5-5.5C14.3 4.5 12 6.8 12 10Z"/></svg></span><div><b>다섯 가지 감성 색감</b><span>매 컷마다 다른 색감을 자유롭게 선택. 오우사만의 색으로 오늘을 물들여요.</span></div></li>
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V8"/><path d="M12 13c-3.2 0-5.5-2.3-5.5-5.5C9.7 7.5 12 9.8 12 13Z"/><path d="M12 10c3.2 0 5.5-2.3 5.5-5.5C14.3 4.5 12 6.8 12 10Z"/></svg></span><div><b>다섯 가지 시그니처 색감</b><span>매 컷마다 다른 색감을 자유롭게 선택. 오우사만의 색으로 오늘을 물들여요.</span></div></li>
         <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg></span><div><b>전체 원본 파일 무료 제공</b><span>고른 사진의 원본을 이메일·USB 등 편한 방식으로 모두 가져가실 수 있어요.</span></div></li>
         <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="2.3" fill="currentColor" stroke="none"/></svg></span><div><b>반려동물 동반 환영</b><span>귀여운 반려동물은 추가 요금 없이 함께 촬영하실 수 있어요.</span></div></li>
-        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.5 20.5 12 12 20.5 3.5 12z"/><circle cx="12" cy="12" r="1.7" fill="currentColor" stroke="none"/></svg></span><div><b>최대 7인 세로 화각</b><span>혼자도, 여럿도 좋아요. 인스타그램에서 실제 촬영 예시를 참고해 보세요.</span></div></li>
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3.5 20.5 12 12 20.5 3.5 12z"/><circle cx="12" cy="12" r="1.7" fill="currentColor" stroke="none"/></svg></span><div><b>무선 리모컨 촬영</b><span>손에 쥔 리모컨으로 원하는 순간에 직접 셔터를. 눈치 볼 필요 없이 편하게 담아요.</span></div></li>
       </ul>
     </div>
   </section>
@@ -348,15 +354,15 @@ body{padding-bottom:74px}
     <div class="wrap">
       <div class="sec-head center rv">
         <span class="eyebrow">Color</span>
-        <h2>다섯 가지 감성 색감</h2>
-        <p>각혈하는 심정으로 직접 빚어낸 오우사만의 색감. 매 컷마다 다른 색을 자유롭게 골라, 나에게 가장 어울리는 오늘을 찾아보세요.</p>
+        <h2>다섯 가지 시그니처 색감</h2>
+        <p>오우사가 오래 매만져 완성한 시그니처 색감. 매 컷마다 다른 색을 자유롭게 골라, 나에게 가장 어울리는 오늘을 찾아보세요.</p>
       </div>
       <div class="tones">
-        <div class="tone rv"><img src="t-classic.jpg" loading="lazy" alt="클래식 색감 예시"><span class="lab">클래식</span></div>
-        <div class="tone rv rv-d1"><img src="os-36.jpg" loading="lazy" alt="모노톤 색감 예시"><span class="lab">모노톤</span></div>
-        <div class="tone rv rv-d2"><img src="t-vivid.jpg" loading="lazy" alt="비비드 색감 예시"><span class="lab">비비드</span></div>
-        <div class="tone rv rv-d3"><img src="os-hero.jpg" loading="lazy" alt="파스텔 색감 예시"><span class="lab">파스텔</span></div>
-        <div class="tone wide rv rv-d3"><img src="t-beige.jpg" loading="lazy" alt="베이지 색감 예시"><span class="lab">베이지</span></div>
+        <div class="tone rv"><img src="tone-classic.jpg" loading="lazy" alt="클래식 색감 예시"><span class="lab">클래식</span></div>
+        <div class="tone rv rv-d1"><img src="tone-mono.jpg" loading="lazy" alt="모노톤 색감 예시"><span class="lab">모노톤</span></div>
+        <div class="tone rv rv-d2"><img src="tone-vivid.jpg" loading="lazy" alt="비비드 색감 예시"><span class="lab">비비드</span></div>
+        <div class="tone rv rv-d3"><img src="tone-pastel.jpg" loading="lazy" alt="파스텔 색감 예시"><span class="lab">파스텔</span></div>
+        <div class="tone wide rv rv-d3"><img src="tone-beige.jpg" loading="lazy" alt="베이지 색감 예시"><span class="lab">베이지</span></div>
       </div>
     </div>
   </section>
@@ -370,42 +376,42 @@ body{padding-bottom:74px}
         <p>가장 많은 사람들이 가장 높은 만족으로 다시 찾는 사진관. 저마다 다른 색과 표정으로 남긴 순간들을 모았어요.</p>
       </div>
       <div class="gallery-grid">
-        <div class="gitem rv"><img src="os-01.jpg" loading="lazy" alt="편안한 분위기의 두 사람 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-16.jpg" loading="lazy" alt="따뜻한 베이지 톤 가족 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-05.jpg" loading="lazy" alt="노란 드레스의 비비드 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-36.jpg" loading="lazy" alt="모노톤 감성의 인물 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-08.jpg" loading="lazy" alt="크리스마스 분위기의 단체 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-02.jpg" loading="lazy" alt="자연스러운 가족 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-11.jpg" loading="lazy" alt="화사한 컬러의 친구 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-35.jpg" loading="lazy" alt="클래식 톤 데님 커플 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-23.jpg" loading="lazy" alt="포근하게 안은 가족 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-30.jpg" loading="lazy" alt="플랜트를 든 화이트 톤 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-15.jpg" loading="lazy" alt="졸업 가운을 입은 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-10.jpg" loading="lazy" alt="발랄한 커플 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-19.jpg" loading="lazy" alt="그린 톤 단체 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-22.jpg" loading="lazy" alt="흑백 감성의 인물 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-06.jpg" loading="lazy" alt="데님 친구들 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-13.jpg" loading="lazy" alt="블루 톤 가족 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-21.jpg" loading="lazy" alt="레드 부케를 든 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-28.jpg" loading="lazy" alt="따뜻한 니트의 친구 단체 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-07.jpg" loading="lazy" alt="화이트 원피스 인물 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-12.jpg" loading="lazy" alt="즐거운 가족 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-26.jpg" loading="lazy" alt="핑크 파스텔 톤 인물 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-14.jpg" loading="lazy" alt="그린 톤 만삭 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-09.jpg" loading="lazy" alt="블루 점프수트 친구 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-27.jpg" loading="lazy" alt="크리스마스 단체 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-20.jpg" loading="lazy" alt="크림 베이지 드레스 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-03.jpg" loading="lazy" alt="교복 콘셉트 단체 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-25.jpg" loading="lazy" alt="레드 카디건 커플 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-33.jpg" loading="lazy" alt="그린 톤 친구 단체 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-18.jpg" loading="lazy" alt="블랙 리본 블라우스 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-31.jpg" loading="lazy" alt="레드 톤 단체 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-24.jpg" loading="lazy" alt="다정한 커플 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-34.jpg" loading="lazy" alt="블루 톤 인물 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-32.jpg" loading="lazy" alt="파스텔 톤 친구 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-29.jpg" loading="lazy" alt="데님 인물 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-17.jpg" loading="lazy" alt="크리스마스 트리와 함께한 촬영 컷"></div>
-        <div class="gitem rv"><img src="os-04.jpg" loading="lazy" alt="데님 커플 촬영 컷"></div>
+        <div class="gitem rv"><img src="os-01.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 인물 컷"></div>
+        <div class="gitem rv"><img src="os-02.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 인물 컷"></div>
+        <div class="gitem rv"><img src="os-03.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 인물 컷"></div>
+        <div class="gitem rv"><img src="os-04.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 인물 컷"></div>
+        <div class="gitem rv"><img src="os-05.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 인물 컷"></div>
+        <div class="gitem rv"><img src="os-06.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 인물 컷"></div>
+        <div class="gitem rv"><img src="os-07.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 인물 컷"></div>
+        <div class="gitem rv"><img src="os-08.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 흑백 인물 컷"></div>
+        <div class="gitem rv"><img src="os-09.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 커플 컷"></div>
+        <div class="gitem rv"><img src="os-10.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 커플 컷"></div>
+        <div class="gitem rv"><img src="os-11.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 커플 컷"></div>
+        <div class="gitem rv"><img src="os-12.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 커플 컷"></div>
+        <div class="gitem rv"><img src="os-13.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 커플 컷"></div>
+        <div class="gitem rv"><img src="os-14.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 커플 컷"></div>
+        <div class="gitem rv"><img src="os-15.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 커플 컷"></div>
+        <div class="gitem rv"><img src="os-16.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 웨딩 컷"></div>
+        <div class="gitem rv"><img src="os-17.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 흑백 커플 컷"></div>
+        <div class="gitem rv"><img src="os-18.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 가족 컷"></div>
+        <div class="gitem rv"><img src="os-19.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 가족 컷"></div>
+        <div class="gitem rv"><img src="os-20.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 흑백 가족 컷"></div>
+        <div class="gitem rv"><img src="os-21.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 가족 컷"></div>
+        <div class="gitem rv"><img src="os-22.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 만삭 촬영 컷"></div>
+        <div class="gitem rv"><img src="os-23.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 가족 컷"></div>
+        <div class="gitem rv"><img src="os-24.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 가족 컷"></div>
+        <div class="gitem rv"><img src="os-25.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 단체 컷"></div>
+        <div class="gitem rv"><img src="os-26.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 단체 컷"></div>
+        <div class="gitem rv"><img src="os-27.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 흑백 단체 컷"></div>
+        <div class="gitem rv"><img src="os-28.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 단체 컷"></div>
+        <div class="gitem rv"><img src="os-29.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 단체 컷"></div>
+        <div class="gitem rv"><img src="os-30.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 졸업 컷"></div>
+        <div class="gitem rv"><img src="os-31.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 졸업 컷"></div>
+        <div class="gitem rv"><img src="os-32.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 한복 졸업 컷"></div>
+        <div class="gitem rv"><img src="os-33.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 졸업 단체 컷"></div>
+        <div class="gitem rv"><img src="os-34.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 졸업 컷"></div>
+        <div class="gitem rv"><img src="os-35.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 크리스마스 컷"></div>
+        <div class="gitem rv"><img src="os-36.jpg" loading="lazy" alt="오늘, 우리 사진관에서 촬영한 크리스마스 컷"></div>
       </div>
     </div>
   </section>
@@ -428,6 +434,7 @@ body{padding-bottom:74px}
         <div class="opt-title">옵션</div>
         <div class="opt-row"><span>인원 추가 (인당)</span><span class="v">10,000</span></div>
         <div class="opt-row"><span>사진 추가 인화 (장당)</span><span class="v"><del>2,500</del>2,000</span></div>
+        <div class="opt-row"><span>후보정 서비스 (장당)</span><span class="v"><del>6,000</del>3,500</span></div>
         <p class="price-note">지금의 우리가 언젠가 꺼내보고 싶은 오늘이 되길</p>
       </div>
     </div>
@@ -455,15 +462,15 @@ body{padding-bottom:74px}
         <summary>촬영 가이드 자세히 보기 <span class="pl" aria-hidden="true">+</span></summary>
         <div class="cg-body">
           <div class="cg-row"><span class="k">입장</span><span class="v">정시(정각) 입장을 기본으로 해요. 예약 확정 시 안내되는 스튜디오 입장 방법을 미리 숙지하고 오시면 편해요.</span></div>
-          <div class="cg-row"><span class="k">시간 배분</span><span class="v">~00:35 촬영 → ~00:50 사진 선택·인화·퇴실 순으로 이용하시면 돼요. 시간마다 알람을 맞춰 드립니다.</span></div>
+          <div class="cg-row"><span class="k">시간 배분</span><span class="v">~00:35 촬영 → ~00:50 사진 선택·인화·퇴실 순으로 이용하시면 돼요. 시간마다 울리는 알람에 맞춰 이용하시면 됩니다.</span></div>
           <div class="cg-row"><span class="k">리모컨</span><span class="v">무선 리모컨으로 직접 촬영해요. 손에 살짝 쥐고, 원하는 순간에 자유롭게 셔터를 눌러 보세요.</span></div>
-          <div class="cg-row"><span class="k">색감</span><span class="v">다섯 가지 색감을 매 컷 자유롭게 선택할 수 있어요. 원하는 색을 미리 정해 두면 시간을 아낄 수 있어요.</span></div>
+          <div class="cg-row"><span class="k">색감</span><span class="v">다섯 가지 색감을 매 컷 자유롭게 선택할 수 있어요. 다양한 색감 중에 가장 잘 어울리는 색감을 선택해보세요.</span></div>
           <div class="cg-row"><span class="k">의상·소품</span><span class="v">탈의실이 있어 여벌 의상을 준비해 오셔도 좋아요. 소품 활용 예시는 인스타그램을 참고해 보세요.</span></div>
           <div class="cg-row"><span class="k">포즈·동선</span><span class="v">서로 바라보고, 웃고, 자연스럽게 움직이는 컷이 예뻐요. 인스타그램 포트폴리오의 포즈를 참고하면 도움이 돼요.</span></div>
-          <div class="cg-row"><span class="k">인원</span><span class="v">최대 7인 세로 화각이에요. 다수 인원은 인스타그램의 예시 사진을 참고해 예약해 주세요.</span></div>
+          <div class="cg-row"><span class="k">인원</span><span class="v">1–7인에 적합한 세로 화각이에요. 다수 인원은 인스타그램의 예시 사진을 참고해 예약해 주세요.</span></div>
         </div>
       </details>
-      <div style="margin-top:18px"><a class="btn-ghost rv" href="https://blog.naver.com/ourstudio_today" target="_blank" rel="noopener">블로그에서 촬영 꿀팁 더 보기 <span aria-hidden="true">&rarr;</span></a></div>
+      <div style="margin-top:18px"><a class="btn-ghost rv" href="https://blog.naver.com/ourstudio_today/223887640844" target="_blank" rel="noopener">블로그에서 촬영 꿀팁 더 보기 <span aria-hidden="true">&rarr;</span></a></div>
     </div>
   </section>
 
@@ -499,7 +506,7 @@ body{padding-bottom:74px}
       </div>
       <div class="faq rv">
         <div class="faq-item"><div class="faq-q"><span class="qm">Q.</span>5인 이상도 촬영이 가능한가요?</div><p class="faq-a">네, 가능해요. 4인을 초과하는 경우에는 인원 추가 옵션을 선택해 주세요. 다만 세로 화각에 최적화되어 있어, 다수 인원은 인스타그램의 예시 사진을 미리 참고하고 예약하시는 걸 권장 드려요.</p></div>
-        <div class="faq-item"><div class="faq-q"><span class="qm">Q.</span>색감은 한 가지만 선택 가능한가요?</div><p class="faq-a">총 다섯 가지 색감을 제공하고 있으며, 매 컷마다 다른 색감을 자유롭게 선택해 촬영하실 수 있어요. 각혈하는 심정으로 직접 빚어낸 오우사만의 색감이니, 자신에게 가장 어울리는 색을 찾는 재미도 느껴 보세요 :)</p></div>
+        <div class="faq-item"><div class="faq-q"><span class="qm">Q.</span>색감은 한 가지만 선택 가능한가요?</div><p class="faq-a">총 다섯 가지 색감을 제공하고 있으며, 매 컷마다 다른 색감을 자유롭게 선택해 촬영하실 수 있어요. 오우사가 오래 매만져 완성한 시그니처 색감이니, 자신에게 가장 어울리는 색을 찾는 재미도 느껴 보세요 :)</p></div>
         <div class="faq-item"><div class="faq-q"><span class="qm">Q.</span>탈의실과 화장실이 있나요? 고데기·드라이기는요?</div><p class="faq-a">탈의실이 마련되어 있어 다른 의상을 준비해 오셔도 좋아요. 화장실은 대학로·노원·서현점은 건물 내에 있으며, 그 외 지점은 이용이 어려워요. 무인 시스템 특성상 화재 위험이 있는 미용 기기(고데기 등)는 비치해 두지 않았습니다.</p></div>
         <div class="faq-item"><div class="faq-q"><span class="qm">Q.</span>총 이용 시간은 어떻게 되나요?</div><p class="faq-a">한 타임당 총 50분이 제공돼요. 정시(정각) 입장을 기본으로, ~00:35 촬영 / ~00:50 사진 내보내기·인화·퇴실로 나눠 이용하시면 됩니다. 편하게 이용하시도록 시간마다 알람을 맞춰 드려요.</p></div>
         <div class="faq-item"><div class="faq-q"><span class="qm">Q.</span>증명사진이나 여권사진도 가능한가요?</div><p class="faq-a">4x6 인화 사진만 제공하고 있어요. 사원증용 프로필 사진 등은 충분히 가능하지만, 신분증용 증명사진이나 여권사진은 증명사진 전문 사진관을 추천 드려요.</p></div>
@@ -530,7 +537,7 @@ body{padding-bottom:74px}
       </div>
       <p class="br-note rv">각 지점은 프라이빗 무인 스튜디오로 운영돼요. 예약 시 네이버 알림으로 상세 주소와 이용 안내를 보내 드립니다. 주차·화장실 등 편의는 지점마다 다르니 예약 전 확인 부탁드려요.</p>
       <div class="br-cta rv">
-        <a class="btn-primary" href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약하기 <span aria-hidden="true">&rarr;</span></a>
+        <a class="btn-primary" href="https://linktr.ee/ourstudio_today" target="_blank" rel="noopener">예약하기 <span aria-hidden="true">&rarr;</span></a>
         <a class="btn-ghost" href="https://www.instagram.com/ourstudio_today/" target="_blank" rel="noopener">인스타그램에서 지점 보기</a>
       </div>
     </div>
@@ -542,7 +549,7 @@ body{padding-bottom:74px}
     <div class="f-brand">오늘, 우리 사진관</div>
     <p class="f-tag">편안히 웃고, 자연스럽게 움직이고, 서로를 바라보는 순간들이<br>오늘의 사진 안에 오래도록 따뜻하게 남기를.</p>
     <div class="f-links">
-      <a href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약</a>
+      <a href="https://linktr.ee/ourstudio_today" target="_blank" rel="noopener">예약</a>
       <a href="https://www.instagram.com/ourstudio_today/" target="_blank" rel="noopener">인스타그램 @ourstudio_today</a>
       <a href="https://blog.naver.com/ourstudio_today" target="_blank" rel="noopener">블로그</a>
       <a href="#top">맨 위로</a>
@@ -551,9 +558,13 @@ body{padding-bottom:74px}
   </div>
 </footer>
 
+<a class="chatbot" href="https://talk.naver.com/profile/c/ourstudio" target="_blank" rel="noopener" aria-label="오우사 톡톡 문의">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 20.5l1.4-5.6A8.5 8.5 0 1 1 21 11.5z"/></svg>
+  <span>톡톡 문의</span>
+</a>
 <div class="quickbar">
   <a class="qb-sub" href="https://www.instagram.com/ourstudio_today/" target="_blank" rel="noopener">인스타그램</a>
-  <a class="qb-main" href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">네이버 예약</a>
+  <a class="qb-main" href="https://linktr.ee/ourstudio_today" target="_blank" rel="noopener">예약하기</a>
 </div>
 
 <script>
