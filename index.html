@@ -15,9 +15,6 @@
 <link rel="canonical" href="https://ourstudio-today-sample.lgt3232.workers.dev/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ffffff'/%3E%3Cg fill='none' stroke='%234c6828' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='6' y='13' width='20' height='13' rx='2.4'/%3E%3Ccircle cx='16' cy='19.5' r='4'/%3E%3Cpath d='M11 13l1.5-2.4h4L18 13'/%3E%3Cpath d='M18 12c2-3 4.5-4 6.5-4-.3 2.4-1.8 4.3-4 5'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preload" as="image" href="os-hero.jpg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -27,6 +24,8 @@
 </script>
 <style>
 @font-face{font-family:'Pretendard';src:url('pretendard-sub.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Gowun Batang';src:url('gowun-r.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Gowun Batang';src:url('gowun-b.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
 :root{
   --bg:#ffffff; --paper:#ffffff;
   --ink:#26271f; --ink2:#565749; --mut:#83857a;
@@ -127,6 +126,7 @@ section{position:relative}
 .marquee{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .marquee-track{display:flex;gap:14px;width:max-content;will-change:transform}
 .brstrip{padding:24px 0}
+.brstrip-title{text-align:center;font-family:var(--serif);font-weight:700;font-size:14px;letter-spacing:.08em;color:var(--green-d);margin-bottom:11px}
 .brstrip-in{display:flex;flex-wrap:wrap;justify-content:center;gap:9px 18px}
 .brstrip a{font-family:var(--serif);font-size:13.5px;color:var(--green-d);opacity:.92;white-space:nowrap;transition:opacity .2s}
 @media(hover:hover){.brstrip a:hover{opacity:1;text-decoration:underline}}
@@ -320,7 +320,9 @@ body{padding-bottom:20px}
 
   <!-- BRANCH STRIP -->
   <section class="brstrip" aria-label="지점 바로가기">
-    <div class="wrap brstrip-in">
+    <div class="wrap">
+      <p class="brstrip-title">전국 10개 지점</p>
+      <div class="brstrip-in">
       <a href="https://naver.me/IFgdfdO0" target="_blank" rel="noopener">마로니에</a>
       <a href="https://naver.me/5l7kSBwP" target="_blank" rel="noopener">신촌연세</a>
       <a href="https://naver.me/Fw7ifPXG" target="_blank" rel="noopener">용리단길</a>
@@ -331,6 +333,7 @@ body{padding-bottom:20px}
       <a href="https://naver.me/GBvXrOKp" target="_blank" rel="noopener">분당야탑</a>
       <a href="https://naver.me/Fk7VeRgH" target="_blank" rel="noopener">수원영통</a>
       <a href="https://naver.me/GPdHnRjt" target="_blank" rel="noopener">광명철산</a>
+      </div>
     </div>
   </section>
 
